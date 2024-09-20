@@ -7,22 +7,22 @@ type MovieCardProps = {
 function MovieCard({
     poster
 }: MovieCardProps){
-    return
+    return (
     <Paper
-    component="a"
-    elevation={0}
-    href="/1"
-    sx={{
-        minWidth: '10rem'
-    }}
-    >
-        <img src={ poster } 
-            style={{
-                width: '100%'
-            }}
-        />
+        component="a"
+        elevation={0}
+        href="/1"
+        sx={{
+            minWidth: '10rem'
+        }}
+        >
+            <img src={ poster } 
+                style={{
+                    width: '100%'
+                }}
+            />
     </Paper>
+    )
 }
 
-export default MovieCard
-;
+export default MovieCard;

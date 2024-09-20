@@ -10,7 +10,9 @@ function Footer() {
                 }}
             >
                 <Typography 
+
                 variant="overline" 
+                component="p"
                 textAlign="center"
                 
                 >
