@@ -13,7 +13,7 @@ function Header(){
                 <Toolbar>
                     <Typography variant="h6"
                     >
-                        Mater Play
+                        Mater Play 
                     </Typography>
                     <Box
                     sx={{

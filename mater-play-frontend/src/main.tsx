@@ -16,7 +16,7 @@ const darkTheme = createTheme ({
   }
 })
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById('root')!).render(    // método da API do React 18 para inicializar a renderização do aplicativo
   <StrictMode>
     <ThemeProvider theme={ darkTheme }>
       <CssBaseline/>
