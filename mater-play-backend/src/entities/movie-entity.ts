@@ -3,17 +3,17 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity('movie')
 export class Movie {
     @PrimaryGeneratedColumn('uuid')
-    id          : string;
+    id : string;
 
     @Column({ nullable: false })
-    title       : string;
+    title : string;
 
     @Column({ nullable : false, type : 'text'})
     description : string;
 
     @Column({ name: 'age-rating', length: 2, nullable : false})
-    ageRating   : string;
+    ageRating : string;
 
     @Column({ nullable : false })
-    poster      : string;
+    poster : string;
 }
