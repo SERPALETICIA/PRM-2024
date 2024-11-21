@@ -1,22 +1,20 @@
+import { Route, Routes } from "react-router-dom"
 import Footer from "./app/components/Footer"
 import Header from "./app/components/Header"
-import HighLightSection from "./app/components/HightlightSection"
-import Section from "./app/components/Section"
+import HomePage from "./app/pages/home"
+
 
 function App() {
+
 
   return (
     <div className="wrapper">
       <Header />
-      <main
-        style={{
-          marginTop: '8rem'
-        }}
-      >
-        <HighLightSection />
-        <Section title="Recomendados para Você" />
-        <Section title="Para toda sua Família" />
-      </main>
+
+      <Routes>
+        <Route path="/:id?" element={ <HomePage/> } />
+      </Routes>
+    
       <Footer />
     </div>
   )

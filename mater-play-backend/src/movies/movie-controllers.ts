@@ -10,16 +10,23 @@ import {
   ParseUUIDPipe,
   Post,
   Put,
+  Query,
 } from '@nestjs/common';
-import { Movie } from 'src/entities/movie-entity';
-import { MovieService } from 'src/services/movie-service';
+import { Category } from 'src/categories/category.entities';
+import { Movie } from 'src/movies/movie-entity';
+import { MovieService } from 'src/movies/movie-servece';
 
 @Controller('movies')
 export class MovieController {
   constructor(private service: MovieService) {}
 
   @Get()
-  findAll(): Promise<Movie[]> {
+  findAll(@Query('categoryId') categoryId?: string): Promise<Movie[]> {
+    if (categoryId) {
+      return this.service.findByCategory({
+        id: Number(categoryId),
+      } as Category);
+    }
     return this.service.findAll();
   }
 

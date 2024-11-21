@@ -1,10 +1,11 @@
 import { Paper } from "@mui/material";
+import { IMovie } from "../../@libs/types";
 
 type MovieCardProps = {
-  poster?: string;
+  movie: IMovie
 }
 function MovieCard({
-  poster
+  movie
 }: MovieCardProps) {
   return (
     <Paper
@@ -15,7 +16,7 @@ function MovieCard({
         minWidth: '10rem'
       }}
     >
-      <img src={ poster }
+      <img src={ 'assets {movie.poster}' }
         style={{
           width: '100%'
         }}
