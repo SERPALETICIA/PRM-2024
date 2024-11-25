@@ -2,7 +2,7 @@ import {Box, Container, Stack, Typography } from "@mui/material";
 import MovieCard from "../MovieCard";
 import { useEffect, useState } from "react";
 import { ICategory, IMovie } from "../../@libs/types";
-import { MovieService } from "../../services/movies-service";
+import { MovieService } from "../../services/movie-service";
 
 type SectionProps = {
   category: ICategory;
@@ -15,8 +15,8 @@ function Section({
 
   useEffect(() => {
     
-    if (category.Id) {
-      MovieService.getByCategoryId(category.Id)
+    if (category.id) {
+      MovieService.getByCategoryId(category.id)
         .then(result => {
           setMovies(result)
         });
@@ -37,7 +37,7 @@ function Section({
         </Typography>
         <Stack
           direction="row"
-          gap={0.5}
+          gap={1}
           sx={{
             overflowY: 'hidden',
             whiteSpace: 'nowrap',
@@ -47,7 +47,6 @@ function Section({
           {movies.map(item => (
             <MovieCard key={item.id} movie={item} />
           ))}
-
         </Stack>
       </Container>
     </Box>

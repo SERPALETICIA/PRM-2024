@@ -1,14 +1,9 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Movie } from './movies/movie-entity';
-import { Category } from './categories/category.entities';
-import { CategoryController } from './categories/category.controller';
-import { MovieController } from './movies/movie-controllers';
-import { CategoryService } from './categories/categoryservice';
-import { MovieService } from './movies/movie-servece';
 import { CategoryModule } from './categories/category-module';
-import { MoviesModule } from './movies/movies-module';
+import { MovieModule } from './movies/movie-module';
+import { GenreModule } from './genres/genre-module';
 
 @Module({
   imports: [
@@ -26,7 +21,8 @@ import { MoviesModule } from './movies/movies-module';
       autoLoadEntities: true,
     }),
     CategoryModule,
-    MoviesModule,
+    GenreModule,
+    MovieModule,
   ],
 })
 export class AppModule {}

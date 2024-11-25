@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import HighLightSection from "../../components/HightlightSection";
+import HighLightSection from "../../components/HighlightSection";
 import Section from "../../components/Section";
 import { ICategory } from "../../@libs/types";
 import { CategoryService } from "../../services/category-service";
 
-function HomePage(){
+function HomePage() {
 
-    const [categories, setCategories] = useState<ICategory[]>([]);
+  const [categories, setCategories] = useState<ICategory[]>([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     CategoryService.getAll()
       .then(result => {
         setCategories(result.data)
@@ -17,20 +17,21 @@ function HomePage(){
         console.log(error)
       })
   }, []);
-    return(
-        <main
-        style={{
-          marginTop: '8rem'
-        }}
-      >
-        <HighLightSection />
-        {
-          categories.map(item => (
-            <Section key={item.Id} category={item} />
-          ))
-        }
-      </main>
-    )
+
+  return (
+    <main
+      style={{
+        marginTop: '8rem'
+      }}
+    >
+      <HighLightSection />
+      {
+        categories.map(item => (
+          <Section key={item.id} category={item} />
+        ))
+      }
+    </main>
+  )
 }
 
 export default HomePage;
